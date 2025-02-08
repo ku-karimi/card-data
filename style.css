@@ -1,0 +1,266 @@
+/* poblic style */
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html , body{
+    height: 100%;
+}
+
+/* part 1 card style */
+
+.body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+    background-color: snow;
+}
+
+.section1{
+    height: 100%;
+    width: 400px;
+    background: rgb(94,0,130);
+    background: radial-gradient(circle, rgba(94,0,130,1) 0%, rgba(61,0,84,1) 32%);
+}
+
+.card-front , .card-back{
+    position: relative;
+    left: 200px;
+    top: 100px;
+    width: 350px;
+    height: 200px;
+    color: snow;
+    background-color: #7d4493;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.circle{
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    top: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: snow;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+#card-number-show{
+    padding: 10px;
+    width: 100%;
+    font-weight: 900;
+    font-size: 30px;
+}
+
+#card-number-show p{
+    width: 80%;
+    margin: auto;
+}
+
+#data-card{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#date-show{
+    display: flex;
+    justify-content: center;
+}
+
+.card-back{
+    top: 150px;
+    left: 150px;
+    background-color: rgb(192, 192, 192);
+}
+
+.line-back{
+    position: relative;
+    top: 30px;
+    display: block;
+    width: 100%;
+    height: 45px;
+    background-color: black;
+}
+
+.line-gray{
+    width: 100%;
+    height: 80px;
+    padding-top: 10px;
+}
+
+.card-back p{
+    width: 85%;
+    margin: auto;
+    margin-top: 30px;
+    height: 40px;
+    background-color: rgba(128, 128, 128, 0.862);
+    color: rgb(208, 208, 208);
+    font-size: 20px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/* part 2 form style */
+
+#section2{
+    margin-right: 130px;
+}
+
+#section2 div{
+    margin-bottom: 25px;
+}
+
+label{
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #460061;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+input{
+    color: #460061;
+    font-size: 17px;
+    font-weight: 700;
+    padding-left: 10px;
+    width: 310px;
+    height: 33px;
+    border: 1px solid purple;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+
+input::placeholder{
+    padding-left: 20px;
+    color: gray;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+input:focus{
+    outline: none;
+    border: 4px double purple;
+    background-color: #f6e1ff;
+}
+
+#exp-mm , #exp-yy{
+    width: 85px;
+}
+
+.togeter-input{
+    display: flex;
+}
+
+.cvc-div{
+    margin-left: 15px;
+}
+
+#cvc{
+    width: 120px;
+}
+
+.btn{
+    margin-top: -20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn input{
+    background-color: #460061;
+    color: snow;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+    #section2{
+        margin-right: 15px;
+    }
+    .section1{
+        width: 300px;
+    }
+    .card-front , .card-back{
+        top: 200px;
+        left: 30px;
+    }
+    .card-back{
+        top: 250px;
+    }
+}
+
+@media screen and (max-width: 766px) {
+    .body{
+        display: block;
+    }
+    .section1{
+        width: 100%;
+        height: 240px;
+    }
+
+    .card-front , .card-back{
+        width: 80%;
+        height: 180px;
+        top: 10px;
+        margin: auto;
+        left: 0px;
+    }
+    .card-front{
+        z-index: 2;
+        left: -10px;
+    }
+    .card-back{
+        top: -60px;
+        left: 20px;
+    }
+    #card-number-show{
+        font-weight: 700;
+        font-size: 22px;
+        padding: 0px;
+    }
+    #card-number-show p{
+        width: 97%;
+        margin: auto;
+        padding: 0px;
+    }
+    #section2{
+        width: 90%;
+        margin-right: 0px;
+        margin: auto;
+        margin-top: 100px;
+    }
+    .cvc-div{
+        margin-left: 2px;
+    }
+    input{
+        width: 280px;
+    }
+    #cvc{
+        width: 110px;
+    }
+}

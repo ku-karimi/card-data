@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CARD</title>
+</head>
+<body>
+    <div class="body">
+        <div class="section1">
+            <div class="card-front">
+                <div class="circle"></div>
+                <div id="card-number-show"><p>0000 0000 0000 0000</p></div>
+                <div id="data-card">
+                    <div id="name-show">JANE APPLEESID</div>
+                    <div id="date-show">
+                        <p id="year">00</p>
+                        <p>/</p>
+                        <p id="month">00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="line-back"></div>
+                <div class="line-gray">
+                    <p>000</p>
+                </div>
+            </div>
+        </div>
+        <div id="section2">
+            <div>
+                <label for="card-name">CARDHOLDER NAME</label>
+                <input type="text" name="card-name" id="card-name" placeholder="e.g.Jane Appleesid">
+            </div>
+            <div>
+                <label for="card-number">CARD NUMBER</label>
+                <input type="number" name="card-number" id="card-number" placeholder="e.g.1234 5678 9123 0000">
+            </div>
+            <div class="togeter-input">
+                <div>
+                    <label for="exp">EXP.DATE(MM/YY)</label>
+                    <input type="datetime" name="exp" id="exp-mm" placeholder="MM">
+                    <input type="datetime" name="exp" id="exp-yy" placeholder="YY">
+                </div>
+                <div class="cvc-div">
+                    <label for="cvc">CVC</label>
+                    <input type="number" name="cvc" id="cvc" placeholder="e.g.123">
+                </div>
+
+            </div>
+            <div class="btn">
+                <input type="submit" value="confirm">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
