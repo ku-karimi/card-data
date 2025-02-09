@@ -59,20 +59,20 @@ html , body{
 }
 
 #card-number-show{
-    padding: 10px;
+    letter-spacing: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     font-weight: 900;
     font-size: 30px;
-}
-
-#card-number-show p{
-    width: 80%;
-    margin: auto;
+    text-align: center;
 }
 
 #data-card{
     display: flex;
     justify-content: space-between;
+    font-size: 18px;
+    font-weight: 0;
     padding: 20px;
 }
 
@@ -242,11 +242,7 @@ input:focus{
         font-weight: 700;
         font-size: 22px;
         padding: 0px;
-    }
-    #card-number-show p{
-        width: 97%;
-        margin: auto;
-        padding: 0px;
+        letter-spacing: normal;
     }
     #section2{
         width: 90%;
@@ -262,5 +258,9 @@ input:focus{
     }
     #cvc{
         width: 110px;
+    }
+
+    #data-card{
+        font-size: 15px;
     }
 }
