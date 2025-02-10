@@ -9,6 +9,7 @@ const inputCardCvc = document.getElementById("cvc");
 const inputCardExpYy = document.getElementById("exp-yy");
 const inputCardExpMm = document.getElementById("exp-mm");
 const btn = document.getElementById("btn");
+let nameCard , number , yearExp , monthExp , cvcBool = false;
 
 // a pulick style for fals value of input
 
@@ -34,8 +35,10 @@ function nameFunc() {
         if (spanElem) {
             spanElem.remove();
         }
+        nameCard = true ;
     }else{
         publickStyleEles(inputCardName,spanElem)
+        nameCard = false ;
     }
 
     cardName.innerHTML = inputCardName.value ;
@@ -54,9 +57,11 @@ function numberFunc() {
         if (spanElem) {
             spanElem.remove();
         }
+        number = true ;
     }else{
         inputCardNumber.type = "number" ;
         publickStyleEles(inputCardNumber,spanElem) ;
+        number = false ;
     }
     
     cardNumber.innerHTML = inputCardNumber.value ;
@@ -75,15 +80,18 @@ function expYearFunc() {
         inputCardExpYy.type = "text" ;
         if (inputCardExpYy.value >= yearNow) {
             inputCardExpYy.style.border = "4px double #3A7D44";
+            yearExp = true ;
             if (spanElem) {
                 spanElem.remove();
             }else{
+                yearExp = false ;
                 publickStyleEles(inputCardExpYy,spanElem)
             }
         }
     }else{
         inputCardExpYy.type = "number" ;
         publickStyleEles(inputCardExpYy,spanElem) ;
+        yearExp = false ;
     }
     
     cardYearExp.innerHTML = inputCardExpYy.value ;
@@ -103,15 +111,26 @@ function expMonthFunc() {
         inputCardExpMm.type = "text" ;
         if (inputCardExpYy.value > yearNow ) {
             inputCardExpMm.style.border = "4px double #3A7D44";
+            monthExp = true ;
             if (spanElem) {
                 spanElem.remove();
             }
-        }else if (inputCardExpMm.value == yearNow && inputCardExpMm.value < monthNow) {   
-            publickStyleEles(inputCardExpMm,spanElem)
+        }else if (inputCardExpMm.value == yearNow) { 
+            if (inputCardExpMm.value < monthNow) {
+                publickStyleEles(inputCardExpMm,spanElem) ;
+                monthExp = false ;
+            } else{
+                inputCardExpMm.style.border = "4px double #3A7D44";
+                monthExp = true ;
+                if (spanElem) {
+                    spanElem.remove();
+                }
+            } 
         }
     }else{
         inputCardExpMm.type = "number" ;
         publickStyleEles(inputCardExpMm,spanElem) ;
+        monthExp = false ;
     }
     
     cardMonthExp.innerHTML = inputCardExpMm.value ;
@@ -130,9 +149,10 @@ function cvcFunc() {
         if (spanElem) {
             spanElem.remove();
         }
-
+        cvcBool = true ;
     }else{
         inputCardCvc.type = "number" ;
+        cvcBool = false ;
         publickStyleEles(inputCardCvc,spanElem) ;
     }
     
@@ -140,3 +160,29 @@ function cvcFunc() {
 }
 
 inputCardCvc.addEventListener("input" , cvcFunc)
+
+// submit button 
+
+let inputTags = document.getElementsByClassName("input-tag") ;
+
+btn.addEventListener("click" , function (event) {
+    if (nameCard && number && yearExp && monthExp && cvcBool) {
+
+        for (let index of inputTags) {
+            let spanElem = index.parentElement.querySelector("span") ;
+            if (spanElem) {
+                spanElem.remove() ;
+            }
+            index.value = "" ;
+            index.style.border = "1px solid purple" ;
+        }
+
+        cardName.innerHTML = "JANE APPLEESID" ;
+        cardNumber.innerHTML = "0000 0000 0000 0000" ;
+        cardYearExp.innerHTML = "00" ;
+        cardMonthExp.innerHTML = "00" ;
+        backNumber.innerHTML = "000" ;   
+    }else{
+        event.preventDefault() ;
+    }
+})
